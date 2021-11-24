@@ -5,5 +5,4 @@ setup:
     
 build:
   docker:
-    web: heroku/Dockerfile.web
-    worker: heroku/Dockerfile.worker
+    web: heroku/Dockerfile
