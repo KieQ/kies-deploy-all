@@ -1,4 +1,4 @@
-FROM kiesun/kieq_build:latest AS front_builder
+FROM kiesun/kieq_build_arm:latest AS front_builder
 
 WORKDIR /root
 
