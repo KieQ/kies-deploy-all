@@ -30,4 +30,4 @@ COPY --from=back_builder /root/kies-code-backend/kies /root
 
 COPY --from=back_builder /lib/x86_64-linux-gnu/libasan.so.5 /lib/x86_64-linux-gnu
 
-CMD /root/kies& /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+CMD /root/kies& /bin/bash -c "envsubst '\$PORT:\$BACKEND_PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
