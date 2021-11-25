@@ -12,6 +12,6 @@ FROM ubuntu:latest
 
 COPY --from=builder /root/kies-code-backend/kies /root
 
-COPY --from=builder /lib/x86_64-linux-gnu/libasan.so.5 /lib/x86_64-linux-gnu
+COPY --from=builder /lib/arm-linux-gnueabihf/libasan.so.5 /lib/arm-linux-gnueabihf
 
 CMD /root/kies
