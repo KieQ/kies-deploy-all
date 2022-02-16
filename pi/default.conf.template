@@ -13,9 +13,7 @@ server {
     proxy_pass http://backend:$BACKEND_PORT/;
   }
 
-  location ^~ /media/ {
-    allow 127.0.0.1;
-    deny all;
+  location /media/ {
     alias /root/media/;
   }
 
