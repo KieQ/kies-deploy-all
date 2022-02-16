@@ -10,6 +10,8 @@ RUN sh script/build.sh
 
 FROM ubuntu:latest
 
+WORKDIR /root
+
 COPY --from=builder /root/kies-code-backend/kies /root
 
 COPY --from=builder /lib/arm-linux-gnueabihf/libasan.so.5 /lib/arm-linux-gnueabihf
