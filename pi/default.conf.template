@@ -14,6 +14,7 @@ server {
   }
 
   location /media/ {
+    autoindex on;
     alias /root/media/;
   }
 
