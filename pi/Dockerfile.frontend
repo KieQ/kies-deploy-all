@@ -12,11 +12,15 @@ FROM nginx:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt update && apt-get install -y language-pack-zh-hans
+RUN apt-get install -y locales locales-all
 
-ENV TZ=Asia/Shanghai
+ENV LC_ALL=zh_CN.UTF-8
 
 ENV LANG=zh_CN.UTF-8
+
+ENV LANGUAGE=zh_CN.UTF-8
+
+ENV TZ=Asia/Shanghai
 
 COPY --from=front_builder /root/kies-code-frontend/app/dist/ /usr/share/nginx/html
 
