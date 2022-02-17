@@ -10,7 +10,15 @@ RUN sh script/build.sh
 
 FROM nginx:latest
 
-ENV LC_ALL=C.UTF-8 
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get install -y locales
+
+ENV LC_ALL=zh_CN.UTF-8
+
+ENV LANG=zh_CN.UTF-8
+
+ENV LANGUAGE=zh_CN.UTF-8
 
 ENV TZ=Asia/Shanghai
 

@@ -10,9 +10,17 @@ RUN sh script/build.sh
 
 FROM ubuntu:latest
 
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt update && apt-get install -y language-pack-zh-hans
+
 ENV TZ=Asia/Shanghai
 
-ENV LC_ALL=C.UTF-8 
+ENV LANG=zh_CN.UTF-8
+
+ENV LC_ALL=zh_CN.UTF-8
+
+ENV LANGUAGE=zh_CN.UTF-8
 
 WORKDIR /root
 
