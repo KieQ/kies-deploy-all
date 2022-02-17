@@ -10,6 +10,14 @@ RUN sh script/build.sh
 
 FROM ubuntu:latest
 
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt update && apt-get install -y language-pack-zh-hans
+
+ENV TZ=Asia/Shanghai
+
+ENV LANG=zh_CN.UTF-8
+
 WORKDIR /root
 
 COPY --from=builder /root/kies-code-backend/kies /root
