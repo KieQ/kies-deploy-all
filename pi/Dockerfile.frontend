@@ -22,7 +22,7 @@ ENV LANGUAGE=zh_CN.UTF-8
 
 ENV TZ=Asia/Shanghai
 
-COPY --from=front_builder /root/kies-code-frontend/app/dist/ /usr/share/nginx/html
+COPY --from=front_builder /root/kies-code-frontend/dist/ /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/
 
