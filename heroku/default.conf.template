@@ -12,7 +12,7 @@ server {
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Request-ID $request_id;
-    proxy_pass http://backend:$BACKEND_PORT/;
+    proxy_pass http://localhost:$BACKEND_PORT/;
   }
 
   location /media/ {
