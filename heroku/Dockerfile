@@ -20,7 +20,7 @@ RUN sh script/build.sh
 
 FROM nginx:latest
 
-COPY --from=front_builder /root/kies-code-frontend/app/dist/ /usr/share/nginx/html
+COPY --from=front_builder /root/kies-code-frontend/dist/ /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
