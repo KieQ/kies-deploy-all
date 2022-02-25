@@ -20,4 +20,9 @@ server {
     alias /root/media/;
   }
 
+  location /tem_media/ {
+    autoindex on;
+    alias /tmp/media/;
+  }
+
 }

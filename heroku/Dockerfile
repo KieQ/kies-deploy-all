@@ -20,6 +20,8 @@ RUN sh script/build.sh
 
 FROM nginx:latest
 
+ENV video_save_path "/tmp/media/"
+
 COPY --from=front_builder /root/kies-code-frontend/dist/ /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/nginx.conf
