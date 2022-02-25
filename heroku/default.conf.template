@@ -20,7 +20,7 @@ server {
     alias /root/media/;
   }
 
-  location /tem_media/ {
+  location /temp_media/ {
     autoindex on;
     alias /tmp/media/;
   }
